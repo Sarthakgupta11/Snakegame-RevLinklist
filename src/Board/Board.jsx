@@ -54,7 +54,7 @@ const getStartingSnakeLLValue = board => {
 
 const Board = () => {
   const [score, setScore] = useState(0);
-  const [board, setBoard] = useState(createBoard(BOARD_SIZE));
+  const [board] = useState(createBoard(BOARD_SIZE));
   const [snake, setSnake] = useState(
     new LinkedList(getStartingSnakeLLValue(board)),
   );
@@ -72,7 +72,7 @@ const Board = () => {
     window.addEventListener('keydown', e => {
       handleKeydown(e);
     });
-  }, []);
+  }, );
 
   // `useInterval` is needed; you can't naively do `setInterval` in the
   // `useEffect` above. See the article linked above the `useInterval`
@@ -206,6 +206,7 @@ const Board = () => {
   return (
     <>
       <h1>Score: {score}</h1>
+      <button>Start</button>
       <div className="board">
         {board.map((row, rowIdx) => (
           <div key={rowIdx} className="row">

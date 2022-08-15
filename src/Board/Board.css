@@ -1,5 +1,7 @@
 .board {
+  background: linear-gradient(skyblue,rgb(231, 231, 138));
   outline: 2px solid rgb(134, 154, 189);
+  border:3px solid black;
 }
 
 .row {
